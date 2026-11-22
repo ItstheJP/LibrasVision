@@ -1,0 +1,109 @@
+:root {
+  --primaria: #4F46E5; --primaria-escura: #3730A3; --primaria-clara: #EEF2FF;
+  --verde: #10B981; --verde-escuro: #059669; --verde-claro: #D1FAE5;
+  --vermelho: #EF4444; --vermelho-claro: #FEE2E2;
+  --fundo: #F8FAFF; --borda: #E5E7EB; --texto: #1E1B4B; --texto-suave: #6B7280;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Nunito", system-ui, sans-serif; background: var(--fundo); color: var(--texto); }
+h1 { font-size: 24px; font-weight: 900; margin-bottom: 16px; }
+h2 { font-size: 18px; font-weight: 900; }
+
+/* ----- layout com menu lateral ----- */
+.layout { display: grid; grid-template-columns: 230px 1fr; min-height: 100vh; }
+.menu { position: sticky; top: 0; height: 100vh; padding: 24px 16px; background: #fff; border-right: 1.5px solid var(--borda); display: flex; flex-direction: column; gap: 6px; }
+.menu__logo { font-size: 20px; font-weight: 900; color: var(--primaria); margin-bottom: 20px; }
+.menu a { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 2px solid transparent; border-radius: 12px; font-weight: 800; font-size: 14px; color: var(--texto-suave); text-decoration: none; }
+.menu a:hover { background: #F3F4F6; }
+.menu a.ativo { background: var(--primaria-clara); border-color: #A5B4FC; color: var(--primaria); }
+.menu__rodape { margin-top: auto; display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700; color: var(--texto-suave); }
+.conteudo { width: 100%; max-width: 640px; margin: 0 auto; padding: 32px 24px 60px; }
+
+/* ----- componentes ----- */
+.cartao { background: #fff; border: 1.5px solid var(--borda); border-radius: 16px; padding: 20px; margin-bottom: 12px; }
+.botao { display: inline-block; padding: 12px 24px; border: none; border-radius: 12px; background: var(--primaria); box-shadow: 0 3px 0 var(--primaria-escura); color: #fff; font: inherit; font-weight: 800; text-align: center; text-decoration: none; cursor: pointer; }
+.botao:disabled { background: var(--borda); box-shadow: 0 3px 0 #D1D5DB; color: var(--texto-suave); cursor: not-allowed; }
+.botao--leve { background: #F3F4F6; box-shadow: none; color: var(--texto-suave); }
+.barra { height: 12px; background: var(--borda); border-radius: 99px; overflow: hidden; }
+.barra__preenchida { height: 100%; background: var(--verde); border-radius: 99px; transition: width .3s; }
+.estatisticas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; text-align: center; margin: 16px 0; }
+.estatisticas strong { display: block; font-size: 22px; }
+
+/* ----- login e cadastro ----- */
+.centralizado { min-height: 100vh; display: grid; place-items: center; padding: 24px; }
+.formulario { width: 100%; max-width: 380px; }
+.campo { display: block; margin-bottom: 14px; font-size: 13px; font-weight: 800; }
+.campo input:not([type=checkbox]) { display: block; width: 100%; margin-top: 6px; padding: 12px; border: 2px solid var(--borda); border-radius: 12px; font: inherit; }
+.erro { min-height: 1.2em; margin-bottom: 12px; color: var(--vermelho); font-weight: 700; }
+
+/* ----- trilha ----- */
+.unidade { display: flex; justify-content: space-between; margin: 24px 0 12px; padding: 10px 14px; border-radius: 14px; background: var(--primaria-clara); color: var(--primaria-escura); font-weight: 800; }
+.caminho { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.licao { display: flex; flex-direction: column; align-items: center; gap: 4px; background: none; border: none; font: inherit; cursor: pointer; }
+.licao small { font-weight: 700; color: var(--texto-suave); }
+.no { width: 64px; height: 64px; display: grid; place-items: center; border: 4px solid; border-radius: 50%; font-size: 26px; }
+.licao--feita .no { background: var(--verde); border-color: var(--verde-escuro); }
+.licao--atual .no { background: var(--primaria); border-color: var(--primaria-escura); }
+.licao--bloqueada { cursor: not-allowed; }
+.licao--bloqueada .no { background: var(--borda); border-color: #D1D5DB; }
+dialog { margin: auto; width: 90%; max-width: 380px; padding: 24px; border: none; border-radius: 20px; text-align: center; }
+dialog::backdrop { background: rgba(0, 0, 0, .5); }
+.acoes { display: flex; justify-content: center; gap: 10px; margin-top: 16px; }
+
+/* ----- aula ----- */
+.aula { min-height: 100vh; display: flex; flex-direction: column; background: #fff; }
+.aula__topo { display: flex; align-items: center; gap: 16px; width: 100%; max-width: 760px; margin: 0 auto; padding: 24px; }
+.aula__topo .barra { flex: 1; }
+.aula__corpo { flex: 1; width: 100%; max-width: 620px; margin: 0 auto; padding: 24px; }
+.aula__camera { width: 100%; max-width: 620px; margin: 0 auto; padding: 0 24px 16px; }
+.aula__camera[hidden] { display: none; }
+.aula__pergunta { margin-bottom: 20px; font-size: 24px; font-weight: 900; }
+.aula__rodape { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px max(24px, calc((100% - 620px) / 2)); border-top: 2px solid var(--borda); }
+.aula__rodape.certo { background: var(--verde-claro); }
+.aula__rodape.errado { background: var(--vermelho-claro); }
+.centro { text-align: center; }
+.centro .emoji { font-size: 72px; }
+.midia { height: 220px; margin-bottom: 20px; display: grid; place-items: center; border-radius: 16px; background: #F3F4F6; overflow: hidden; }
+.midia img, .midia video { max-width: 100%; max-height: 100%; }
+.midia span { display: none; font-weight: 700; color: var(--texto-suave); }
+.midia--vazia span { display: block; }
+.midia--vazia img { display: none; }
+.opcao { display: block; width: 100%; margin-bottom: 12px; padding: 14px 18px; border: 2px solid var(--borda); border-radius: 14px; background: #fff; box-shadow: 0 3px 0 var(--borda); font: inherit; font-size: 16px; font-weight: 700; text-align: left; color: var(--texto); cursor: pointer; }
+.opcao small { display: block; margin-top: 4px; font-weight: 600; color: var(--texto-suave); }
+.opcao.escolhida { border-color: var(--primaria); background: var(--primaria-clara); box-shadow: 0 3px 0 var(--primaria); }
+.opcao.certa { border-color: var(--verde); background: var(--verde-claro); box-shadow: 0 3px 0 var(--verde); }
+.opcao.errada { border-color: var(--vermelho); background: var(--vermelho-claro); box-shadow: 0 3px 0 var(--vermelho); }
+
+/* ----- missões, perfil e introdução ----- */
+.missao { display: flex; align-items: center; gap: 14px; }
+.missao__icone { font-size: 28px; }
+.missao__info { flex: 1; }
+.missao__info .barra { margin: 8px 0 4px; }
+.missao__premio { font-weight: 800; color: var(--primaria); }
+.missao--feita { background: var(--verde-claro); border-color: var(--verde); }
+.linha { display: flex; align-items: center; gap: 10px; }
+.linha input { flex: 1; padding: 12px; border: 2px solid var(--borda); border-radius: 12px; font: inherit; }
+.botao--perigo { background: var(--vermelho); box-shadow: 0 3px 0 #B91C1C; }
+.passo[hidden] { display: none; }
+
+/* ----- dicionário ----- */
+.busca { display: flex; gap: 10px; margin-bottom: 8px; }
+.busca input, .busca select { padding: 12px; border: 2px solid var(--borda); border-radius: 12px; font: inherit; }
+.busca input { flex: 1; }
+.grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-bottom: 20px; }
+.cartao-sinal { position: relative; padding: 10px; border: 1.5px solid var(--borda); border-radius: 14px; background: #fff; text-align: center; }
+.cartao-sinal .midia { height: 110px; margin-bottom: 8px; }
+.remover { position: absolute; top: 6px; right: 6px; border: none; border-radius: 8px; background: #fff; font-size: 14px; cursor: pointer; }
+dialog.largo { max-width: 560px; }
+
+/* ----- câmera ----- */
+.camera { display: block; width: 100%; border-radius: 12px; background: #111; margin-bottom: 12px; }
+.status { margin-bottom: 12px; font-weight: 700; color: var(--texto-suave); }
+.letra-grande { font-size: 96px; font-weight: 900; line-height: 1.1; color: var(--primaria); }
+.texto-reconhecido { min-height: 44px; margin: 8px 0 12px; font-size: 28px; font-weight: 900; letter-spacing: 4px; word-break: break-all; }
+
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+  .menu { position: static; height: auto; flex-direction: row; flex-wrap: wrap; }
+  .menu__logo, .menu__rodape { display: none; }
+}

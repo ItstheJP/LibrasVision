@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula — LibrasVision</title>
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+<div class="aula">
+  <div class="aula__topo">
+    <a href="trilha.html" class="botao botao--leve" style="padding:8px 14px">✕</a>
+    <div class="barra"><div class="barra__preenchida" id="barra"></div></div>
+    <strong id="vidas"></strong>
+  </div>
+  <div class="aula__corpo" id="corpo"></div>
+  <div class="aula__camera" id="area-camera" hidden>
+    <video id="video" playsinline muted style="display:none"></video>
+    <canvas id="tela" class="camera"></canvas>
+  </div>
+  <div class="aula__rodape" id="rodape"></div>
+</div>
+<script src="dados/licoes.js"></script>
+<script src="js/comum/db.js"></script>
+<script src="js/comum/sessao.js"></script>
+<script src="js/comum/midia.js"></script>
+<script type="module" src="js/aula.js"></script>
+</body>
+</html>

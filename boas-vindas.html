@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem-vindo — LibrasVision</title>
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body class="centralizado">
+<main class="formulario cartao" style="max-width:560px">
+  <section class="passo" id="passo1">
+    <h1 id="titulo">Bem-vindo!</h1>
+    <p style="margin-bottom:16px">O LibrasVision ensina Libras com lições curtas. Como você quer aprender?</p>
+    <button class="opcao" data-leitor="sim"><strong>📷 Com leitor de Libras</strong>
+      <small>A câmera confere se você fez o sinal certo. Recomendado.</small></button>
+    <button class="opcao" data-leitor="nao"><strong>📝 Sem leitor</strong>
+      <small>Você responde perguntas, sem usar a câmera. Dá para mudar depois no Perfil.</small></button>
+  </section>
+
+  <section class="passo" id="passo2" hidden>
+    <h1>Teste da câmera</h1>
+    <p style="margin-bottom:12px">Mostre uma das mãos para a câmera.</p>
+    <video id="video" playsinline muted style="display:none"></video>
+    <canvas id="tela" class="camera" width="640" height="360"></canvas>
+    <p class="status" id="estado">Carregando a câmera...</p>
+    <div class="acoes">
+      <button class="botao botao--leve" id="pular">Usar sem leitor</button>
+      <button class="botao" id="continuar" disabled>Continuar</button>
+    </div>
+  </section>
+
+  <section class="passo centro" id="passo3" hidden>
+    <div class="emoji" style="font-size:64px">🎉</div>
+    <h1>Tudo pronto!</h1>
+    <p id="resumo" style="margin-bottom:8px"></p>
+    <div class="acoes">
+      <a class="botao botao--leve" href="trilha.html">Ver a trilha</a>
+      <a class="botao" id="primeira">Começar a primeira lição</a>
+    </div>
+  </section>
+</main>
+<script src="dados/licoes.js"></script>
+<script src="js/comum/db.js"></script>
+<script src="js/comum/sessao.js"></script>
+<script type="module" src="js/boas-vindas.js"></script>
+</body>
+</html>

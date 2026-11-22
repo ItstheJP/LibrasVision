@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar conta — LibrasVision</title>
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body class="centralizado">
+<form class="formulario cartao" id="form">
+  <h1>Criar conta</h1>
+  <label class="campo">Nome <input type="text" name="nome" required></label>
+  <label class="campo">E-mail <input type="email" name="email" required></label>
+  <label class="campo">Senha (mínimo 6 caracteres) <input type="password" name="senha" minlength="6" required></label>
+  <p class="erro" id="erro"></p>
+  <button class="botao" style="width:100%">Criar conta e começar</button>
+  <p style="margin-top:16px;text-align:center;font-size:14px">Já tem conta? <a href="login.html">Entrar</a></p>
+</form>
+<script src="dados/licoes.js"></script>
+<script src="js/comum/db.js"></script>
+<script src="js/comum/sessao.js"></script>
+<script src="js/cadastro.js"></script>
+</body>
+</html>

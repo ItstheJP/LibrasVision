@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprender — LibrasVision</title>
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="menu" id="menu"></nav>
+  <main class="conteudo">
+    <h1>Trilha de aprendizado</h1>
+    <div class="cartao" id="avanco"></div>
+    <div id="trilha"></div>
+    <dialog id="dialogo">
+      <div style="font-size:44px" id="d-icone"></div>
+      <h2 id="d-titulo"></h2>
+      <p id="d-info" style="margin-top:8px;color:var(--texto-suave)"></p>
+      <div class="acoes">
+        <button class="botao botao--leve" id="d-fechar">Depois</button>
+        <a class="botao" id="d-comecar">Começar!</a>
+      </div>
+    </dialog>
+  </main>
+</div>
+<script src="dados/licoes.js"></script>
+<script src="js/comum/db.js"></script>
+<script src="js/comum/sessao.js"></script>
+<script src="js/comum/menu.js"></script>
+<script src="js/trilha.js"></script>
+</body>
+</html>

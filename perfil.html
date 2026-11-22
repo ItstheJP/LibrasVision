@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil — LibrasVision</title>
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="menu" id="menu"></nav>
+  <main class="conteudo">
+    <h1>Perfil</h1>
+    <div class="cartao">
+      <div class="linha">
+        <input type="text" id="nome" maxlength="40" aria-label="Nome">
+        <button class="botao" id="salvar-nome">Salvar</button>
+      </div>
+      <p id="email" style="margin-top:8px;color:var(--texto-suave)"></p>
+      <div class="estatisticas" id="numeros"></div>
+    </div>
+
+    <div class="cartao">
+      <h2 style="margin-bottom:12px">Configurações</h2>
+      <label class="campo"><input type="checkbox" id="leitor"> Usar o leitor de Libras (câmera) nas lições</label>
+      <p style="margin-bottom:12px"><a href="camera.html">Testar a câmera</a> • <a href="diagnostico.html">Diagnóstico do sistema</a> •
+        <a href="dicionario.html">Meus sinais personalizados: <span id="qtd-sinais"></span></a></p>
+      <button class="botao botao--leve" id="refazer">Refazer a introdução</button>
+    </div>
+
+    <div class="cartao">
+      <h2 style="margin-bottom:4px">Dados da conta</h2>
+      <p class="status">Tudo fica salvo apenas neste navegador.</p>
+      <div class="acoes" style="justify-content:flex-start">
+        <button class="botao botao--leve" id="reiniciar">Reiniciar progresso</button>
+        <button class="botao botao--perigo" id="excluir">Excluir conta</button>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="dados/licoes.js"></script>
+<script src="js/comum/db.js"></script>
+<script src="js/comum/sessao.js"></script>
+<script src="js/comum/menu.js"></script>
+<script src="js/perfil.js"></script>
+</body>
+</html>

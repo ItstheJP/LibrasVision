@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnóstico — LibrasVision</title>
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+<main class="conteudo">
+  <h1>Diagnóstico do sistema</h1>
+  <p class="status">Confere se este computador e as pastas do projeto estão prontos. Não precisa de login.</p>
+  <div id="resultados"></div>
+  <script>
+    if (location.protocol === "file:") {
+      document.getElementById("resultados").innerHTML = '<div class="cartao"><strong>❌ Aberto por arquivo</strong>' +
+        '<p class="status" style="margin:4px 0 0">Abra por http://localhost:8000 (rode: python -m http.server 8000 na pasta do site).</p></div>';
+    }
+  </script>
+  <div class="acoes" style="justify-content:flex-start">
+    <button class="botao" onclick="location.reload()">Rodar de novo</button>
+    <a class="botao botao--leve" href="index.html">Voltar ao site</a>
+  </div>
+</main>
+<script src="dados/licoes.js"></script>
+<script src="dados/sinais.js"></script>
+<script type="module" src="js/diagnostico.js"></script>
+</body>
+</html>

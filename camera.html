@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Câmera — LibrasVision</title>
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="menu" id="menu"></nav>
+  <main class="conteudo">
+    <h1>Câmera</h1>
+    <div class="cartao">
+      <video id="video" playsinline muted style="display:none"></video>
+      <canvas id="tela" class="camera" width="640" height="360"></canvas>
+      <p class="status" id="status">Clique em "Ligar câmera" para começar</p>
+      <button class="botao" id="botao">Ligar câmera</button>
+    </div>
+    <div class="cartao centro">
+      <div class="letra-grande" id="letra">–</div>
+      <small id="confianca"></small>
+    </div>
+    <div class="cartao">
+      <h2>Texto reconhecido</h2>
+      <p class="texto-reconhecido" id="texto"></p>
+      <div class="acoes" style="justify-content:flex-start">
+        <button class="botao botao--leve" id="espaco">Espaço</button>
+        <button class="botao botao--leve" id="limpar">Limpar</button>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="dados/licoes.js"></script>
+<script src="js/comum/db.js"></script>
+<script src="js/comum/sessao.js"></script>
+<script src="js/comum/menu.js"></script>
+<script type="module" src="js/camera.js"></script>
+</body>
+</html>

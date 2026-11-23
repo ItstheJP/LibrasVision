@@ -9,12 +9,12 @@
 
 function atividadesDaLetra(letra, outras) {
   return [
-    { tipo: "teoria", midia: `midia/${letra}.gif`, texto: `Letra ${letra} do alfabeto manual.` },
+    { tipo: "teoria", midia: `midia/${letra}.jpeg`, texto: `Letra ${letra} do alfabeto manual.` },
     {
       tipo: "reconhecer",
       sinal: letra,
-      midia: `midia/${letra}.gif`,
-      alternativa: { tipo: "multipla_escolha", pergunta: "Que letra este sinal representa?", midia: `midia/${letra}.gif`, opcoes: [letra, ...outras], correta: letra },
+      midia: `midia/${letra}.jpeg`,
+      alternativa: { tipo: "multipla_escolha", pergunta: "Que letra este sinal representa?", midia: `midia/${letra}.jpeg`, opcoes: [letra, ...outras], correta: letra },
     },
   ];
 }
@@ -22,8 +22,8 @@ function atividadesDaLetra(letra, outras) {
 function atividadesDaPalavra(palavra, outras) {
   const arquivo = palavra.toLowerCase();
   return [
-    { tipo: "teoria", midia: `midia/${arquivo}.gif`, texto: `Sinal de "${palavra}".` },
-    { tipo: "multipla_escolha", pergunta: "Que palavra este sinal representa?", midia: `midia/${arquivo}.gif`, opcoes: [palavra, ...outras], correta: palavra },
+    { tipo: "teoria", midia: `midia/${arquivo}.jpeg`, texto: `Sinal de "${palavra}".` },
+    { tipo: "multipla_escolha", pergunta: "Que palavra este sinal representa?", midia: `midia/${arquivo}.jpeg`, opcoes: [palavra, ...outras], correta: palavra },
   ];
 }
 
